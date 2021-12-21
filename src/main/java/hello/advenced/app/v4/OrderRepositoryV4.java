@@ -22,7 +22,7 @@ public class OrderRepositoryV4 {
                 return null;
             }
         };
-        template.execute("OrderController.save()");
+        template.execute("OrderRepository.save()");
     }
 
     private void sleep(int mills) {
