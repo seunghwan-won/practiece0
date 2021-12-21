@@ -1,7 +1,6 @@
 package hello.advenced.app.trace.strategy;
 
 import hello.advenced.app.trace.strategy.code.strategy.ContextV1;
-import hello.advenced.app.trace.strategy.code.strategy.Strategy;
 import hello.advenced.app.trace.strategy.code.strategy.StrategyLogic1;
 import hello.advenced.app.trace.strategy.code.strategy.StrategyLogic2;
 import lombok.extern.slf4j.Slf4j;
