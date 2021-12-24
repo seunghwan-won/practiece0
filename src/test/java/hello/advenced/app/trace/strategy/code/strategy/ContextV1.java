@@ -1,6 +1,5 @@
 package hello.advenced.app.trace.strategy.code.strategy;
 
-import hello.advenced.app.trace.TraceStatus;
 import lombok.extern.slf4j.Slf4j;
 
 /**

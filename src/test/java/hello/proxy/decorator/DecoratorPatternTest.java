@@ -1,9 +1,6 @@
 package hello.proxy.decorator;
 
 import hello.proxy.decorator.code.*;
-import hello.proxy.pure_proxy.code.CacheProxy;
-import hello.proxy.pure_proxy.code.ProxyPatternClient;
-import hello.proxy.pure_proxy.code.RealSubject;
 import org.junit.jupiter.api.Test;
 
 public class DecoratorPatternTest {

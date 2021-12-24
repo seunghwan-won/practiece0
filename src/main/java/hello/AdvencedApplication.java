@@ -1,7 +1,5 @@
 package hello;
 
-import hello.proxy.config.AppV1Config;
-import hello.proxy.config.AppV2Config;
 import hello.proxy.config.v1_proxy.InterfaceProxyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

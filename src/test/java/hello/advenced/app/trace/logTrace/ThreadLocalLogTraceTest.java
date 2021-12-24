@@ -4,8 +4,6 @@ import hello.advenced.app.trace.LogTrace;
 import hello.advenced.app.trace.TraceStatus;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ThreadLocalLogTraceTest {
 
     LogTrace logTrace = new ThreadLocalLogTrace();

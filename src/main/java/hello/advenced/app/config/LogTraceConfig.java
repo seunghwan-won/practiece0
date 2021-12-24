@@ -1,9 +1,5 @@
 package hello.advenced.app.config;
 
-import hello.advenced.app.trace.LogTrace;
-import hello.advenced.app.trace.logTrace.ThreadLocalLogTrace;
-import hello.proxy.trace.callback.TraceTemplate;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

@@ -8,6 +8,9 @@ public class OrderServiceV2 {
         this.repositoryV2 = repositoryV2;
     }
 
+    public OrderServiceV2() {
+    }
+
     public void save(String itemId) {
         repositoryV2.save(itemId);
     }

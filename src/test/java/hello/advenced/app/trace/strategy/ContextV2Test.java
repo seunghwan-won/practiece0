@@ -1,6 +1,5 @@
 package hello.advenced.app.trace.strategy;
 
-import hello.advenced.app.trace.strategy.code.strategy.ContextV1;
 import hello.advenced.app.trace.strategy.code.strategy.ContextV2;
 import hello.advenced.app.trace.strategy.code.strategy.StrategyLogic1;
 import hello.advenced.app.trace.strategy.code.strategy.StrategyLogic2;
