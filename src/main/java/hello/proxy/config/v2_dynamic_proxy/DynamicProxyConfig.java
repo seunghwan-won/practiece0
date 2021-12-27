@@ -1,7 +1,7 @@
 package hello.proxy.config.v2_dynamic_proxy;
 
 import hello.proxy.app.v1.*;
-import hello.proxy.config.v2_dynamic_proxy.handlerr.LogTraceBasicHandler;
+import hello.proxy.config.v2_dynamic_proxy.handler.LogTraceBasicHandler;
 import hello.proxy.trace.logtrace.LogTrace;
 import hello.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.context.annotation.Bean;
