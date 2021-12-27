@@ -4,7 +4,10 @@ import hello.proxy.cglib.cod.TimeMethodInterceptor;
 import hello.proxy.common.service.ConcreteService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.cglib.proxy.Enhancer;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @Slf4j
 public class CglibTest {
@@ -19,5 +22,7 @@ public class CglibTest {
         log.info("proxy class={}", proxy.getClass().getSimpleName());
 
         proxy.call();
+
+        //assertThat(AopUtils.isCglibProxy(proxy)).isTrue(); //proxyFactory를 통해서 생성된 프록시만 확인가능
     }
 }
