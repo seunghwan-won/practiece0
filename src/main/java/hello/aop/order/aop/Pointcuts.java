@@ -3,7 +3,6 @@ package hello.aop.order.aop;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Pointcuts {
 
     @Pointcut("execution(* hello.aop.order..*(..))")
