@@ -1,7 +1,6 @@
 package hello.proxy.config.v3_prox_factory;
 
 import hello.proxy.app.v1.*;
-import hello.proxy.config.v2_dynamic_proxy.handler.LogTraceFilterHandler;
 import hello.proxy.config.v3_prox_factory.advice.LogTraceAdvice;
 import hello.proxy.trace.logtrace.LogTrace;
 import hello.proxy.trace.logtrace.ThreadLocalLogTrace;
@@ -13,8 +12,6 @@ import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.NameMatchMethodPointcut;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.lang.reflect.Proxy;
 
 @Slf4j
 @Configuration
