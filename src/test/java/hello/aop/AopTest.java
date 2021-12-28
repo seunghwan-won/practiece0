@@ -2,7 +2,8 @@ package hello.aop;
 
 import hello.aop.order.OrderRepository;
 import hello.aop.order.OrderService;
-import hello.aop.order.aop.AspectV4;
+import hello.aop.order.aop.AspectV4Log;
+import hello.aop.order.aop.AspectV4Transaction;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
@@ -16,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 //@Import({AspectV1.class})
 //@Import({AspectV2.class})
 //@Import({AspectV3.class})
-@Import({AspectV4.class})
+@Import({AspectV4Log.class, AspectV4Transaction.class})
 @SpringBootTest
 class AopTest {
 

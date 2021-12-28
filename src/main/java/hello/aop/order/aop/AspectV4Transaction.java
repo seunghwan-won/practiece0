@@ -4,12 +4,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 
 @Slf4j
+@Order(1)
 @Aspect
-public class AspectV4 {
-
+public class AspectV4Transaction {
     // hello.aop.order. 패키지와 하위 패키지 이면서 클래서 이름 패턴이 *Service
     @Around("Pointcuts.allOrderAndService()")
     public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
@@ -25,13 +25,4 @@ public class AspectV4 {
             log.info("[리소스 릴리즈] {}", joinPoint.getSignature());
         }
     }
-
-
-    @Around("Pointcuts.allOrder()")
-    public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("[log] {}", joinPoint.getSignature());
-        return joinPoint.proceed();
-    }
-
-
 }
