@@ -11,7 +11,7 @@ import org.springframework.core.annotation.Order;
 @Aspect
 public class AspectV4Transaction {
     // hello.aop.order. 패키지와 하위 패키지 이면서 클래서 이름 패턴이 *Service
-    @Around("Pointcuts.allOrderAndService()")
+    @Around("hello.aop.order.aop.Pointcuts.allOrderAndService()")
     public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             log.info("[트랜잭션 시작] {}", joinPoint.getSignature());

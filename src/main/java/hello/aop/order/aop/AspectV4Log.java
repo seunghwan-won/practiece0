@@ -10,7 +10,7 @@ import org.springframework.core.annotation.Order;
 @Order(2)
 @Aspect
 public class AspectV4Log {
-    @Around("Pointcuts.allOrder()")
+    @Around("hello.aop.order.aop.Pointcuts.allOrder()")
     public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("[log] {}", joinPoint.getSignature());
         return joinPoint.proceed();

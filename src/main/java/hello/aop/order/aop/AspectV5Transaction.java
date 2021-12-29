@@ -25,24 +25,24 @@ public class AspectV5Transaction {
 //        }
 //    }
 
-    @Before("Pointcuts.allOrderAndService()")
+    @Before("hello.aop.order.aop.Pointcuts.allOrderAndService()")
     public void doBefore(JoinPoint joinPoint) {
         log.info("[before] {}", joinPoint.getSignature());
     }
 
-    @AfterReturning(value = "Pointcuts.allOrderAndService()", returning = "result")
+    @AfterReturning(value = "hello.aop.order.aop.Pointcuts.allOrderAndService()", returning = "result")
     public void doAfterReturning(JoinPoint joinPoint, Object result) {
         log.info("[afterReturning] {} result={}", joinPoint.getSignature(), result);
     }
 
 
-    @AfterThrowing(value = "Pointcuts.allOrderAndService()", throwing = "ex")
+    @AfterThrowing(value = "hello.aop.order.aop.Pointcuts.allOrderAndService()", throwing = "ex")
     public void doAfterThrowing(JoinPoint joinPoint, Exception ex) {
         log.info("[afterThrowing] {} ex={}", joinPoint.getSignature(), ex);
     }
 
 
-    @After("Pointcuts.allOrderAndService()")
+    @After("hello.aop.order.aop.Pointcuts.allOrderAndService()")
     public void doAfter(JoinPoint joinPoint) {
         log.info("[after] {}", joinPoint.getSignature());
     }
