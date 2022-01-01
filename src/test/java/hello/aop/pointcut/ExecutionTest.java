@@ -1,7 +1,7 @@
 package hello.aop.pointcut;
 
-import hello.aop.member.annotation.MemberService;
-import hello.aop.member.annotation.MemberServiceImpl;
+import hello.aop.member.MemberService;
+import hello.aop.member.MemberServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,13 +22,13 @@ public class ExecutionTest {
 
     @Test
     void printMethod() {
-        //java.lang.String hello.aop.member.annotation.MemberServiceImpl.hello(java.lang.String)
+        //java.lang.String hello.aop.member.MemberServiceImpl.hello(java.lang.String)
         log.info("helloMethod={}", helloMethod);
     }
 
     @Test
     void exactMatch() {
-        pointcut.setExpression("execution(public String hello.aop.member.annotation.MemberServiceImpl.hello(String))");
+        pointcut.setExpression("execution(public String hello.aop.member.MemberServiceImpl.hello(String))");
         Assertions.assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
     }
 
@@ -59,7 +59,7 @@ public class ExecutionTest {
 
     @Test
     void exactPackageMatch1() {
-        pointcut.setExpression("execution(* hello.aop.member.annotation.MemberServiceImpl.hello(String))");
+        pointcut.setExpression("execution(* hello.aop.member.MemberServiceImpl.hello(String))");
         Assertions.assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
     }
 
@@ -83,26 +83,26 @@ public class ExecutionTest {
 
     @Test
     void typeExactMatch() {
-        pointcut.setExpression("execution(* hello.aop.member.annotation.MemberServiceImpl.*(..))");
+        pointcut.setExpression("execution(* hello.aop.member.MemberServiceImpl.*(..))");
         Assertions.assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
     }
 
     @Test
     void superTypeMatch() {
-        pointcut.setExpression("execution(* hello.aop.member.annotation.MemberService.*(..))");
+        pointcut.setExpression("execution(* hello.aop.member.MemberService.*(..))");
         Assertions.assertThat(pointcut.matches(helloMethod, MemberService.class)).isTrue();
     }
 
     @Test
     void typeMatchInternal1() throws NoSuchMethodException {
-        pointcut.setExpression("execution(* hello.aop.member.annotation.MemberServiceImpl.*(..))");
+        pointcut.setExpression("execution(* hello.aop.member.MemberServiceImpl.*(..))");
         helloMethod = MemberServiceImpl.class.getMethod("internal", String.class);
         Assertions.assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
     }
 
     @Test
     void typeMatchInternal2() throws NoSuchMethodException {
-        pointcut.setExpression("execution(* hello.aop.member.annotation.MemberService.*(..))");
+        pointcut.setExpression("execution(* hello.aop.member.MemberService.*(..))");
         helloMethod = MemberServiceImpl.class.getMethod("internal", String.class);
         Assertions.assertThat(pointcut.matches(helloMethod, MemberService.class)).isFalse();
     }

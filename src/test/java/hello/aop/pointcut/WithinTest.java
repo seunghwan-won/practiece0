@@ -1,6 +1,6 @@
 package hello.aop.pointcut;
 
-import hello.aop.member.annotation.MemberServiceImpl;
+import hello.aop.member.MemberServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ public class WithinTest {
 
     @Test
     void withinExact() throws NoSuchMethodException {
-        pointcut.setExpression("within(hello.aop.member.annotation.MemberServiceImpl)");
+        pointcut.setExpression("within(hello.aop.member.MemberServiceImpl)");
         assertThat(pointcut.matches(method, MemberServiceImpl.class)).isTrue();
         method = MemberServiceImpl.class.getMethod("internal", String.class);
         assertThat(pointcut.matches(method, MemberServiceImpl.class)).isTrue();
@@ -44,7 +44,7 @@ public class WithinTest {
     @Test
     void withinFalse() {
         // 정확한 타입 지정해야함
-        pointcut.setExpression("within(hello.aop.member.annotation.MemberService)");
+        pointcut.setExpression("within(hello.aop.member.MemberService)");
         assertThat(pointcut.matches(method, MemberServiceImpl.class)).isFalse();
     }
 
