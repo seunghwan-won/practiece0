@@ -53,12 +53,12 @@ public class ParameterTest {
             log.info("[logArgs3]arg={}", arg);
         }
 
-        @Before("allMember() && this(obj)")     // 호출되는 인스턴스
+        @Before("allMember() && this(obj)")     // 프록시
         public void thisArgs(JoinPoint joinPoint, MemberService obj) {
             log.info("[this]={}, obj={}", joinPoint.getSignature(), obj.getClass());
         }
 
-        @Before("allMember() && target(obj)")   // proxy
+        @Before("allMember() && target(obj)")   // 프록시가 가르키는 실제 대상
         public void targetArgs(JoinPoint joinPoint, MemberService obj) {
             log.info("[target]={}, obj={}", joinPoint.getSignature(), obj.getClass());
         }
