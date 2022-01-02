@@ -9,7 +9,7 @@ public class CallServiceV0 {
 
     public void external() {
         log.info("call external");
-        internal();의
+        internal();
     }
 
     public void internal() {
